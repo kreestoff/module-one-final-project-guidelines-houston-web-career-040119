@@ -14,5 +14,5 @@ def empl_login(prompt)
     exit_program(prompt)
   end
 
-  empl_projects(prompt,employee) # TODO: implement
+  empl_projects(prompt,employee)
 end

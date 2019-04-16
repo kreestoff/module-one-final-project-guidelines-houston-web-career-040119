@@ -23,7 +23,7 @@ def construct_tasks_output_string(tasks,show_employee=false)
       lines = split_text(task.description,50)
     end
 
-    if show_employee
+    if show_employee && task.employee
       lines.unshift("Contact: #{task.employee.first_name} #{task.employee.last_name}")
     end
 
