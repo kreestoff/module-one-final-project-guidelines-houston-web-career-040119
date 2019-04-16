@@ -12,7 +12,7 @@ def choose_acct_type(prompt)
   when sel_admin
     admin_login(prompt)
   when sel_empl
-    empl_login(prompt) # TODO: implement
+    empl_login(prompt)
   when sel_exit
     exit_program(prompt)
   end

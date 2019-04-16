@@ -5,7 +5,7 @@ def admin_login(prompt)
   passwd = prompt.mask('Enter administrator password (hint: password)')
   case passwd
   when admin_passwd
-    admin_main_menu(prompt) # TODO: implement
+    admin_main_menu(prompt)
   else
     exit_program(prompt)
   end
