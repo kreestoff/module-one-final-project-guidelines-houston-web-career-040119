@@ -15,7 +15,7 @@ def empl_projects(prompt,employee)
     when sel_exit
       exit_program(prompt)
     else
-      empl_show_project(prompt,employee,Project.find(selection)) # TODO: implement
+      empl_show_project(prompt,employee,Project.find(selection))
     end
   end
 end
