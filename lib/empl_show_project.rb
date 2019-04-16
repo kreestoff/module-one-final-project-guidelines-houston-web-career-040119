@@ -6,6 +6,8 @@ def empl_show_project(prompt,employee,project)
 
   cd_reset = "\e[0m"
 
+  page_str += "\n" + cd_reset + "Project: #{project.name}"
+  page_str += "\n" + cd_reset + "Date: " + Date.today.to_s
   page_str += "\n" + cd_reset + "Completed tasks show in gray. Overdue tasks show in red.\n\n"
 
   page_str += empl_show_project_helper_proj(prompt,employee,project)
