@@ -1,4 +1,4 @@
-def exit_program(prompt,err_msg=nil)
+def exit_program(prompt=nil,err_msg=nil)
   puts "\e[H\e[2J"
   exit_code = 0
 
