@@ -10,10 +10,10 @@ def choose_acct_type(prompt)
 
   case selection
   when sel_admin
-    admin_login(prompt)  # TODO: implement
+    admin_login(prompt)
   when sel_empl
     empl_login(prompt) # TODO: implement
   when sel_exit
-    exit_program(prompt) # TODO: implement
+    exit_program(prompt)
   end
 end
