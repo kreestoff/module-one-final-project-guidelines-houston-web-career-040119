@@ -4,7 +4,7 @@ def empl_login(prompt)
   3.times do
     username = prompt.ask('Enter username: ')
     passwd = prompt.mask('Enter password: ')
-    employee = Employee.all.first # TODO: implement employee login function
+    employee = Employee.all.find_by(username:username, password:passwd)
     if employee != nil
       break
     end
