@@ -4,7 +4,7 @@ def empl_projects(prompt,employee)
 
   while true
     puts "\e[H\e[2J"
-    selection = prompt.select("Choose project or exit") do |menu|
+    selection = prompt.select("Choose project or exit",per_page:15) do |menu|
       project_list.each do |proj|
         menu.choice proj.name, proj.id
       end

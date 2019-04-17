@@ -6,9 +6,9 @@ def admin_add_update_projects(prompt)
   while true
     puts "\e[H\e[2J"
     project_list = Project.all
-    selection = prompt.select("Choose Project to Edit, Add a Project or Return.") do |menu|
+    selection = prompt.select("Choose Project to Edit, Add a Project or Return.",per_page:15) do |menu|
       project_list.each do |project|
-        menu.choice "ID: #{project.id} Name: #{project.name}", project.id
+        menu.choice "#{project.name}", project.id
       end
       menu.choice "Add a New Project", sel_new_project
       menu.choice "Return", sel_return

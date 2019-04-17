@@ -11,9 +11,15 @@ def admin_edit_task(prompt, task)
 
   while true
     puts "\e[H\e[2J"
+
+    employee_name = ""
+    if task.employee
+      employee_name = (task.employee.first_name || "") + " " + (task.employee.last_name || "")
+    end
+
     selection = prompt.select("Choose attribute you wish to edit:") do |menu|
       menu.choice "Description: #{task.description}", sel_desc
-      menu.choice "Employee assigned: #{task.employee.first_name} #{task.employee.last_name}", sel_employee
+      menu.choice "Employee assigned: #{employee_name}", sel_employee
       menu.choice "Due date: #{task.due_date}", sel_date
       menu.choice "Completed: #{task.completed}", sel_complete
       menu.choice "Delete task", sel_delete
