@@ -1,3 +1,8 @@
+Employee.destroy_all
+Project.destroy_all
+Task.destroy_all
+Specialty.destroy_all
+
 emp1 = Employee.create(first_name: "Tom", last_name: "Jones", username: "TommyJ", password: "password", specialty_id: 1)
 emp2 = Employee.create(first_name: "Jerry", last_name: "Jones", username: "JerryJ", password: "password", specialty_id: 2)
 emp3 = Employee.create(first_name: "Chuck", last_name: "Baker", username: "Chucky", password: "password", specialty_id: 3)
