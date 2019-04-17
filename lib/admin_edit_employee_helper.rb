@@ -9,12 +9,18 @@ def admin_edit_employee_helper(prompt, employee)
   while true
     puts "\e[H\e[2J"
     specialty_list = Specialty.all
+
+    specialty_name = ""
+    if employee.specialty
+      specialty_name = employee.specialty.name
+    end
+
     selection = prompt.select("Choose attribute you wish to edit:") do |menu|
       menu.choice "Edit First Name: #{employee.first_name}", sel_fname
       menu.choice "Edit Last Name: #{employee.last_name}", sel_lname
       menu.choice "Edit Username: #{employee.username}", sel_username
       menu.choice "Edit Password: #{employee.password}", sel_password
-      menu.choice "Edit Specialty: #{employee.specialty_id}", sel_specid
+      menu.choice "Edit Specialty: #{specialty_name}", sel_specid
       menu.choice "Return", sel_return
     end
 

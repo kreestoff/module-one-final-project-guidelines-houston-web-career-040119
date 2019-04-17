@@ -6,13 +6,26 @@ def construct_tasks_output_string(tasks,show_employee=false)
   page_str =  cd_reset + "Due date  " + " " + "Description\n"
   page_str += cd_reset + "--------  " + " " + "-----------\n"
 
+
+
+
   tasks.each do |task|
+
+    due_date = nil
+    begin
+      if task.due_date
+        due_date = Date.strptime(task.due_date,"%Y-%m-%d").to_s
+      end
+    rescue ArgumentError
+    end
+
+
     cd_task = cd_reset
 
     if task.completed
       cd_task = cd_gray
-    elsif task.due_date
-      yyyy,mm,dd = task.due_date.split(" ")[0].split("-").map { |x| x.to_i }
+    elsif due_date
+      yyyy,mm,dd = due_date.split(" ")[0].split("-").map { |x| x.to_i }
       if Date.new(yyyy,mm,dd) < Date.today
         cd_task = cd_red
       end
