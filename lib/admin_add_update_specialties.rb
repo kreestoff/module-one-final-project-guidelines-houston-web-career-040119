@@ -8,7 +8,7 @@ def admin_add_update_specialties(prompt)
     puts "\e[H\e[2J"
     selection = prompt.select("Choose Specialty to Edit, Add Specialty or Return.") do |menu|
       specialty_list.each do |specialty|
-        menu.choice "ID: #{specialty.id} Name: #{specialty.name}"
+        menu.choice "ID: #{specialty.id} Name: #{specialty.name}", specialty.id
       end
       menu.choice "Add a New Specialty", sel_new_specialty
       menu.choice "Return", sel_return
