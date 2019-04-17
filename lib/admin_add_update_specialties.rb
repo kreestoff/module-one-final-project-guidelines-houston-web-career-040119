@@ -1,22 +1,22 @@
 def admin_add_update_specialties(prompt)
   specialty_list = Specialty.all
-  admin_new_specialty = -1
-  admin_edit_specialty = -2
+  sel_new_specialty = -1
+  sel_edit_specialty = -2
   sel_return  = -3
 
   #while true
     puts "\e[H\e[2J"
     selection = prompt.select("Choose Specialty to Edit, Add Specialty or Return.") do |menu|
       specialty_list.each do |specialty|
-        menu.choice specialty.name, specialty.id
+        menu.choice "ID: #{specialty.id} Name: #{specialty.name}"
       end
-      menu.choice "Add a New Specialty", admin_new_specialty
+      menu.choice "Add a New Specialty", sel_new_specialty
       menu.choice "Return", sel_return
     end
 
     case selection
     when sel_return
-    when admin_new_specialty
+    when sel_new_specialty
       admin_new_specialty(prompt)
       #admin_main_menu(prompt)
     else
