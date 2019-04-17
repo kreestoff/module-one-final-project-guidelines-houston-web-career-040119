@@ -1,0 +1,25 @@
+def admin_edit_employee(prompt, employee)
+  sel_edit = -1
+  sel_delete = -2
+  sel_return = -3
+
+  puts "\e[H\e[2J"
+  selection = prompt.select("Would you like to Edit or Delete #{employee.first_name} #{employee.last_name}?") do |menu|
+    menu.choice "Edit", sel_edit
+    menu.choice "Delete", sel_delete
+    menu.choice "Return", sel_return
+  end
+
+  case selection
+  when sel_return
+  when sel_edit
+    admin_edit_employee_helper(prompt, employee)
+  when sel_delete
+    employee.delete
+    Task.where(employee_id: employee.id).each do |task|
+      task.update(employee_id:nil)
+    end
+    puts "You've deleted #{employee.first_name} #{employee.last_name}."
+    sleep(2)
+  end
+end

@@ -20,5 +20,4 @@ def admin_add_update_specialties(prompt)
   else
     admin_edit_specialty(prompt, Specialty.find(selection))
   end
-
 end
