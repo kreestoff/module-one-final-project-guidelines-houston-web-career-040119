@@ -14,7 +14,7 @@ def admin_add_update_employees(prompt)
         if employee.specialty
           disp_specialty = text_truncate(employee.specialty.name || "",15,true)
         end
-        menu.choice "Name: #{disp_full_name} Specialty ID: #{disp_specialty}", employee.id 
+        menu.choice "Name: #{disp_full_name} Specialty: #{disp_specialty}", employee.id 
       end
       menu.choice "Add a New Employee", sel_new_employee
       menu.choice "Return", sel_return
