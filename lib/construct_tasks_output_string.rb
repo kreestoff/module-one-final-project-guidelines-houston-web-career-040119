@@ -1,4 +1,4 @@
-def construct_tasks_output_string(tasks,employee=nil,show_employee=false)
+def construct_tasks_output_string(tasks,show_employee=false)
   cd_red = "\e[1;31m" 
   cd_reset = "\e[0m"
   cd_gray = "\e[38;5;244m"
@@ -23,8 +23,8 @@ def construct_tasks_output_string(tasks,employee=nil,show_employee=false)
       lines = split_text(task.description,50)
     end
 
-    if show_employee
-      lines.unshift("#{employee.first_name} #{employee.last_name}")
+    if show_employee && task.employee
+      lines.unshift("Contact: #{task.employee.first_name} #{task.employee.last_name}")
     end
 
     page_str += cd_task + (task.due_date || "          ").slice(0,10) + " " + lines[0] + "\n"
