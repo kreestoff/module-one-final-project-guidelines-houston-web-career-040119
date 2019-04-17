@@ -10,7 +10,7 @@ def admin_new_project(prompt)
     Project.create(name: project_name, start_date: project_start_date, end_date: project_end_date)
     puts "You've successfully added #{project_name}."
     sleep(2)
-  else puts "This Project Name is already taken. Try another name."
+  else puts "This Project name is already taken. Try another name."
     sleep(2)
   end
 end
