@@ -14,7 +14,7 @@ def admin_edit_employee_helper(prompt, employee)
       menu.choice "Edit Last Name: #{employee.last_name}", sel_lname
       menu.choice "Edit Username: #{employee.username}", sel_username
       menu.choice "Edit Password: #{employee.password}", sel_password
-      menu.choice "Edit Specialty: #{employee.specialty.name}", sel_specid
+      menu.choice "Edit Specialty: #{employee.specialty_id}", sel_specid
       menu.choice "Return", sel_return
     end
 
