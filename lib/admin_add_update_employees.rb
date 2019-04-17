@@ -6,9 +6,15 @@ def admin_add_update_employees(prompt)
   while true
     puts "\e[H\e[2J"
     employee_list = Employee.all
-    selection = prompt.select("Choose Employee to Edit, Add employee or Return.") do |menu|
+    selection = prompt.select("Choose Employee to Edit, Add employee or Return.",per_page:15) do |menu|
       employee_list.each do |employee|
-        menu.choice "ID: #{employee.id} Name: #{employee.first_name} #{employee.last_name} Specialty ID: #{employee.specialty_id}", employee.id 
+        full_name = (employee.first_name || "") + " " + (employee.last_name || "")
+        disp_full_name = text_truncate(full_name,40,true)
+        disp_specialty = ""
+        if employee.specialty
+          disp_specialty = text_truncate(employee.specialty.name || "",15,true)
+        end
+        menu.choice "Name: #{disp_full_name} Specialty ID: #{disp_specialty}", employee.id 
       end
       menu.choice "Add a New Employee", sel_new_employee
       menu.choice "Return", sel_return

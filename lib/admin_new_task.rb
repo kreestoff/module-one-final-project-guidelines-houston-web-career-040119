@@ -5,9 +5,16 @@ def admin_new_task(prompt, project)
   puts "Project: #{project.name}"
   desc = prompt.ask("Please enter a description of the task.")
   due = prompt.ask("Please enter the due date of the task YYYY-MM-DD.")
-  employee = prompt.select("Please select the employee to assign to this task.") do |menu|
+  employee = prompt.select("Please select the employee to assign to this task.",per_page:15) do |menu|
     employee_list.each do |employee|
-      menu.choice "#{employee.first_name} #{employee.last_name} Specialty: #{employee.specialty_id}", employee.id
+      disp_specialty = ""
+      if employee.specialty
+        disp_specialty = employee.specialty.name || ""
+      end
+      disp_specialty = text_truncate(disp_specialty,15,true)
+      full_name = (employee.first_name || "") + " " + (employee.last_name || "")
+      disp_name = text_truncate(full_name,40,true)
+      menu.choice "#{disp_name} Specialty: #{disp_specialty}", employee.id
     end
   end
 
