@@ -13,8 +13,7 @@ def admin_edit_employee(prompt, employee)
   case selection
   when sel_return
   when sel_edit
-    puts "\e[H\e[2J"
-    admin_edit_employee_helper(prompt)
+    admin_edit_employee_helper(prompt, employee)
   when sel_delete
     employee.delete
     Task.where(employee_id: employee.id).each do |task|
