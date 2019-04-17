@@ -13,13 +13,13 @@ def admin_main_menu(prompt)
 
     case selection
     when sel_special
-      admin_add_update_specialties(prompt) # TODO: Implement
+      admin_add_update_specialties(prompt) 
     when sel_empl
-      admin_add_update_employees(prompt) # TODO: Implement
+      admin_add_update_employees(prompt) 
     when sel_proj
-      admin_add_update_projects(prompt) # TODO: Implement
+      admin_add_update_projects(prompt) 
     when sel_report
-      admin_produce_report(prompt) # TODO: Implement
+      admin_produce_report(prompt) 
     when sel_exit
       exit_program(prompt)
     end
