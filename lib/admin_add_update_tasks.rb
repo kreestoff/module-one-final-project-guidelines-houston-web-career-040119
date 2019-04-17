@@ -7,7 +7,7 @@ def admin_add_update_tasks(prompt, project)
   puts "Project: #{project.name}"
   selection = prompt.select("Select Task to Edit, Add task or Return.") do |menu|
     task_list.each do |task|
-      menu.choice "ID: #{task.id} Description: #{task.description} Employee ID: #{task.employee_id} Completed: #{task.completed} Due Date: #{task.due_date}"
+      menu.choice "ID: #{task.id} Description: #{task.description} Employee ID: #{task.employee_id} Completed: #{task.completed} Due Date: #{task.due_date}", task.id
     end
     menu.choice "Create new task for #{project.name} project.", sel_new_task
     menu.choice "Return", sel_return
