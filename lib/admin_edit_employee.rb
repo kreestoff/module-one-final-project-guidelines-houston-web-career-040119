@@ -4,7 +4,7 @@ def admin_edit_employee(prompt, employee)
   sel_return = -3
 
   puts "\e[H\e[2J"
-  selection = prompt.select("Would you like to Edit or Delete #{employee.first_name} #{employee.last_name}?") do |menu|
+  selection = prompt.select("Would you like to Edit or Delete record for #{employee.first_name} #{employee.last_name}?") do |menu|
     menu.choice "Edit", sel_edit
     menu.choice "Delete", sel_delete
     menu.choice "Return", sel_return
@@ -22,4 +22,5 @@ def admin_edit_employee(prompt, employee)
     puts "You've deleted #{employee.first_name} #{employee.last_name}."
     sleep(2)
   end
+
 end

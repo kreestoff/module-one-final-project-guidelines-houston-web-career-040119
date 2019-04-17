@@ -1,7 +1,4 @@
 def admin_new_project(prompt)
-  sel_yes = -1
-  sel_return= -2
-
   puts "\e[H\e[2J"
   project_name = prompt.ask("Enter new project's name.")
   project_start_date = prompt.ask("Enter start date: YYYY-MM-DD")
