@@ -1,4 +1,5 @@
 def admin_edit_employee_helper(prompt, employee)
+  specialty_list = Specialty.all
   sel_fname = -1
   sel_lname = -2
   sel_username = -3
@@ -48,9 +49,13 @@ def admin_edit_employee_helper(prompt, employee)
     sleep(2)
   when sel_specid
     puts "\e[H\e[2J"
-    new_specid = prompt.ask("Please enter new specialty ID.")
-    employee.update(specialty_id: new_specid)
-    puts "First name has been updated to #{new_specid}."
+    new_specialty = prompt.select("Select employee's new specialty.") do |menu|
+      specialty_list.each do |specialty|
+        menu.choice "#{specialty.name}", specialty.id
+      end
+    end
+    employee.update(specialty_id: new_specialty)
+    puts "Specialty has been updated to #{new_specialty}."
     sleep(2)
   end
 end
