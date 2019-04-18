@@ -66,6 +66,42 @@ the program.
 
 ## Using Administrator mode
 
+We will assume, again, that the database has been seeded as previously
+indicated. From the opening screen, select ```Administrator``` and
+enter the password ```password``` to open the administration menu.
+(If the password is entered incorrectly, the program will immediately
+abort.) We will demonstrate the CRUD (Create/Read/Update/Delete) 
+operations in turn.
+
+### Create
+
+### Read
+
+The simplest Read operation is available from the administrator main
+menu; simply select ```Produce Report``` to see a a list of all projects 
+and corresponding tasks; each task will report the employee to whom the
+task has been assigned. Completed tasks show up in gray, overdue tasks 
+show up in red, and remaining tasks (i.e. incomplete tasks which are
+not overdue) are rendered in black. Tasks are ordered by due date;
+tasks without an assigned due date show up top. Press ```q``` to return
+to the administrator main menu.
+
+To read the list of all specialties, select ```Add/Update Specialties``` 
+from the administrator main menu. Select ```Return``` to return to the 
+main menu.
+
+To read the list of employees, select ```Add/Update Employees``` from the
+administrator main menu. Select ```Return``` to return to the main menu.
+
+To read the list of all projects, select ```Add/Update Projects``` from the
+administrator main menu. To read all tasks associated with a project,
+select the project name, followed by ```Edit```, followed 
+by ```Create or Edit Tasks```. Select ```Return``` three times in a row
+to return to the administrator main menu.
+
+### Update
+
+### Delete
 
 <!--
 # Module One Final Project Guidelines
