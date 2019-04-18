@@ -124,7 +124,22 @@ to return to the administrator main menu.
 
 ### Update
 
+To update a specialty, select ```Add/Update Specialties``` from the
+administrator main menu. Select the specialty to be updated, then
+select ```Edit``` and enter the new name of the specialty. Select
+```Return``` to return to the main menu.
 
+To update an employee's record, select ```Add/Update Employees``` from
+the administrator main menu. Select the employee to be updated, select
+```Edit```, then select a field to update that field's value.
+Select ```Return``` twice to return to the main menu.
+
+To update a project, select ```Add/Update Projects``` from the administrator
+main menu. Select the project to be updated, then select ```Edit```. 
+Select a field to update that field's value. To update tasks, 
+select ```Create or Edit Tasks``` and select the task to update.
+Select a field to update that field's value. Select ```Return``` four times
+to return to the main menu.
 
 ### Delete
 
