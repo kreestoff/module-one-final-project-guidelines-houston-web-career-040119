@@ -28,6 +28,12 @@ directory:
 ```bash
 bundle install
 rake db:migrate
+```
+
+Optionally, the following command may then be run to seed the database
+with some fun dummy data:
+
+```bash
 rake db:seed
 ```
 
@@ -37,6 +43,7 @@ from the top level program directory:
 ```bash
 ruby bin/run.rb
 ```
+
 
 
 <!--
