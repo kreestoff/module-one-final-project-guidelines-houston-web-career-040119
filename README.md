@@ -44,6 +44,16 @@ from the top level program directory:
 ruby bin/run.rb
 ```
 
+## Using Employee mode
+
+We will assume that the database has been seeded as in the previous
+paragraph. From the opening screen, select
+
+```
+Employee
+```
+
+and enter a username of ```TommyJ``` followed by a password ```password```.
 
 
 <!--
