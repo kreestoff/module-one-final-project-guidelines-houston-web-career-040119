@@ -124,6 +124,27 @@ to return to the administrator main menu.
 
 ### Update
 
+
+
 ### Delete
 
+To delete a specialty, select ```Add/Update Specialties``` from the
+administrator main menu. Select the specialty to be deleted, then select
+```Delete``` and input ```y```. Select ```Return``` to return to the
+main menu.
+
+To delete an employee's record, select ```Add/Update Employees``` from
+the administrator main menu. Select the employee to be removed,
+then select ```Delete``` and input ```y```. Select ```Return``` to return
+to the main menu.
+
+To delete a project, select ```Add/Update Projects``` from the administrator
+main menu. Select the project to be deleted, then select ```Delete```
+and input ```y```. Select ```Return``` to return to the main menu.
+
+To delete a task, select ```Add/Update Projects``` from the administrator
+main menu. Select the project to which the task belongs, and then
+select ```Edit```, followed by ```Create or Edit Tasks```. Select the
+task to be removed, then select ```Delete task``` and input ```y```. 
+Select ```Return``` three times to return to the main menu.
 
