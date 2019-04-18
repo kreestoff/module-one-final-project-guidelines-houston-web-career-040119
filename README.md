@@ -9,6 +9,15 @@ tracks progress on projects in terms of employees and tasks.
 Each project has many employees assigned to it, and each employee
 can be assigned to many projects. The assignment occurs via tasks;
 each task is associated with a single employee and a single project.
+Employees can log-in using their assigned credentials to view the
+tasks they have been assigned, coded by project,
+completion status and due date. The full set of CRUD (Create, Read,
+Update, Delete) operations are implemented via the Administrator
+account; the Administrator password is, conveniently,
+```
+password
+```
+
 
 ## Before First Run
 
