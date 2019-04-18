@@ -6,15 +6,11 @@ def construct_tasks_output_string(tasks,show_employee=false)
   page_str =  cd_reset + "Due date  " + " " + "Description\n"
   page_str += cd_reset + "--------  " + " " + "-----------\n"
 
-
-
-
   tasks.each do |task|
-
     due_date = nil
     begin
       if task.due_date
-        due_date = Date.strptime(task.due_date,"%Y-%m-%d").to_s
+        due_date = Date.strptime(task.due_date,"%Y-%m-%d")
       end
     rescue ArgumentError
     end
@@ -25,8 +21,7 @@ def construct_tasks_output_string(tasks,show_employee=false)
     if task.completed
       cd_task = cd_gray
     elsif due_date
-      yyyy,mm,dd = due_date.split(" ")[0].split("-").map { |x| x.to_i }
-      if Date.new(yyyy,mm,dd) < Date.today
+      if due_date < Date.today
         cd_task = cd_red
       end
     end
@@ -40,7 +35,7 @@ def construct_tasks_output_string(tasks,show_employee=false)
       lines.unshift("Contact: #{task.employee.first_name} #{task.employee.last_name}")
     end
 
-    page_str += cd_task + (task.due_date || "          ").slice(0,10) + " " + lines[0] + "\n"
+    page_str += cd_task + text_truncate(task.due_date || "",10,true) + " " + lines[0] + "\n"
     lines.slice(1,lines.length-1).each do |line|
       page_str += cd_task + "          " + " " + line + "\n"
     end

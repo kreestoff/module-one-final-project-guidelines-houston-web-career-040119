@@ -16,12 +16,14 @@ def admin_edit_employee(prompt, employee)
   when sel_edit
     admin_edit_employee_helper(prompt, employee)
   when sel_delete
-    employee.delete
-    Task.where(employee_id: employee.id).each do |task|
-      task.update(employee_id:nil)
+    if !prompt.no?("Are you sure you want to delete record for #{employee.first_name} #{employee.last_name}?")
+      employee.delete
+      Task.where(employee_id: employee.id).each do |task|
+        task.update(employee_id:nil)
+      end
+      puts "You've deleted #{employee.first_name} #{employee.last_name}."
+      sleep(2)
     end
-    puts "You've deleted #{employee.first_name} #{employee.last_name}."
-    sleep(2)
   end
 
 end

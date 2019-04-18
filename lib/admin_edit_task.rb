@@ -1,5 +1,4 @@
 def admin_edit_task(prompt, task)
-  employee_list = Employee.all
   sel_desc = -1
   sel_employee = -2
   sel_date = -3
@@ -11,6 +10,7 @@ def admin_edit_task(prompt, task)
 
   while true
     puts "\e[H\e[2J"
+    employee_list = Employee.all
 
     employee_name = ""
     if task.employee
@@ -62,12 +62,18 @@ def admin_edit_task(prompt, task)
         task.update(completed: 1)
         puts "You've marked this task as complete."
         sleep(2)
+      when sel_no
+        task.update(completed: 0)
+        puts "You've marked this task as incomplete."
+        sleep(2)
       end
     when sel_delete
-      task.delete
-      puts "You've deleted this task."
-      sleep(2)
-      break
+      if !prompt.no?("Are you sure you want to delete this task?")
+        task.delete
+        puts "You've deleted this task."
+        sleep(2)
+        break
+      end
     end
   end
 end

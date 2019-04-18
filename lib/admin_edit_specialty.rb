@@ -20,13 +20,15 @@ def admin_edit_specialty(prompt, specialty)
     puts "You've updated this specialty's name to #{updated_name}."
     sleep(2)
   when sel_delete
-    specialty.delete
+    if !prompt.no?("Are you sure you want to delete the specialty #{specialty.name}?")
+      specialty.delete
 
-    Employee.where(specialty_id: specialty.id).each do |employee|
-      employee.update(specialty_id:nil)
+      Employee.where(specialty_id: specialty.id).each do |employee|
+        employee.update(specialty_id:nil)
+      end
+      puts "You've deleted the #{specialty.name} specialty."
+      sleep(2)
     end
-    puts "You've deleted the #{specialty.name} specialty."
-    sleep(2)
   end
 
 
