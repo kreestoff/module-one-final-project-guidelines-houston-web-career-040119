@@ -1,3 +1,34 @@
+# Module One Final Project: Project Manager
+
+## Program Description
+
+The Project Manager application is a Ruby CLI program which
+tracks progress on projects in terms of employees and tasks.
+Each project has many employees assigned to it, and each employee
+can be assigned to many projects. The assignment occurs via tasks;
+each task is associated with a single employee and a single project.
+
+## Before First Run
+
+In order to use this program, before the first run the user must
+execute the following commands, in order, from the top level program
+directory:
+
+```bash
+bundle install
+rake db:migrate
+rake db:seed
+```
+
+Then the program may be executed by running the following command
+from the top level program directory:
+
+```bash
+ruby bin/run.rb
+```
+
+
+<!--
 # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
@@ -57,3 +88,5 @@ Projects need to be approved prior to launching into them, so take some time to 
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
 ```
+-->
+
