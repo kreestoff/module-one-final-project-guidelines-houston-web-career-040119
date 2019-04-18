@@ -1,5 +1,7 @@
 # Module One Final Project: Project Manager
 
+Ryan Denlinger and Christopher Lee McIntosh
+
 ## Program Description
 
 The Project Manager application is a Ruby CLI program which
