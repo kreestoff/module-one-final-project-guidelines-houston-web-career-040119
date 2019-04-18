@@ -54,7 +54,8 @@ to which this user has been assigned (via one or more tasks).
 Select the first project, ```Bay Bridge```, and observe that there is
 one task. Completed tasks show up in gray, overdue tasks show up in
 red, and remaining tasks (i.e. incomplete tasks which are not overdue)
-are rendered in black.
+are rendered in black. Tasks are ordered by due date; tasks without an
+assigned due date show up top.
 
 Under tasks, the user is presented with a list of other employees assigned
 to this project, followed by a list of users (across all projects)
