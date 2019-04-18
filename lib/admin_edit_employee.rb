@@ -12,7 +12,6 @@ def admin_edit_employee(prompt, employee)
 
   case selection
   when sel_return
-    break
   when sel_edit
     admin_edit_employee_helper(prompt, employee)
   when sel_delete
