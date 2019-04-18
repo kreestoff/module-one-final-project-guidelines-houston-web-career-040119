@@ -15,12 +15,14 @@ def admin_edit_project(prompt, project)
   when sel_edit
     admin_edit_project_helper(prompt, project)
   when sel_delete
-    Task.where(project_id: project.id).each do |task|
-      task.delete
+    if !prompt.no?("Are you sure you want to delete the project #{project.name}?")
+      Task.where(project_id: project.id).each do |task|
+        task.delete
+      end
+      project.delete
+      puts "You've deleted #{project.name} and all associated tasks."
+      sleep(2)
     end
-    project.delete
-    puts "You've deleted #{project.name} and all associated tasks."
-    sleep(2)
   end
 
 end
