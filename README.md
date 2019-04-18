@@ -47,13 +47,23 @@ ruby bin/run.rb
 ## Using Employee mode
 
 We will assume that the database has been seeded as in the previous
-paragraph. From the opening screen, select
+paragraph. From the opening screen, select ```Employee```
+and enter a username of ```TommyJ``` followed by the password ```password```.
+You should see a list containing three projects, which are the projects
+to which this user has been assigned (via one or more tasks).
+Select the first project, ```Bay Bridge```, and observe that there is
+one task. Completed tasks show up in gray, overdue tasks show up in
+red, and remaining tasks (i.e. incomplete tasks which are not overdue)
+are rendered in black.
 
-```
-Employee
-```
+Under tasks, the user is presented with a list of other employees assigned
+to this project, followed by a list of users (across all projects)
+whose specialty coincides with the user's.
 
-and enter a username of ```TommyJ``` followed by a password ```password```.
+Press ```q``` to exit the project view, then select ```Exit``` to quit
+the program.
+
+## Using Administrator mode
 
 
 <!--
