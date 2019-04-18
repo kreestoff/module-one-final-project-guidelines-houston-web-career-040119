@@ -46,19 +46,21 @@ ruby bin/run.rb
 
 ## Using Employee mode
 
-We will assume that the database has been seeded as in the previous
-paragraph. From the opening screen, select ```Employee```
-and enter a username of ```TommyJ``` followed by the password ```password```.
-You should see a list containing three projects, which are the projects
+From the opening screen, select ```Employee```
+and enter the username followed by the corresponding password
+(if the database has been seeded as in the previous paragraph, then
+there will be a user with username ```TommyJ``` and password ```password```).
+The next screen will display the projects
 to which this user has been assigned (via one or more tasks).
-Select the first project, ```Bay Bridge```, and observe that there is
-one task. Completed tasks show up in gray, overdue tasks show up in
+Select a project to view the user's assigned tasks for that project.
+Completed tasks show up in gray, overdue tasks show up in
 red, and remaining tasks (i.e. incomplete tasks which are not overdue)
 are rendered in black. Tasks are ordered by due date; tasks without an
 assigned due date show up top.
 
-Under tasks, the user is presented with a list of other employees assigned
-to this project, followed by a list of users (across all projects)
+Below the list of tasks, the user is presented with a list of other 
+employees assigned
+to the same project, followed by a list of users (across all projects)
 whose specialty coincides with the user's.
 
 Press ```q``` to exit the project view, then select ```Exit``` to quit
@@ -66,8 +68,7 @@ the program.
 
 ## Using Administrator mode
 
-We will assume, again, that the database has been seeded as previously
-indicated. From the opening screen, select ```Administrator``` and
+From the opening screen, select ```Administrator``` and
 enter the password ```password``` to open the administration menu.
 (If the password is entered incorrectly, the program will immediately
 abort.) We will demonstrate the CRUD (Create/Read/Update/Delete) 
